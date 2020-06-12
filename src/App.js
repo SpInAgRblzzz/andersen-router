@@ -14,6 +14,19 @@ function App() {
 	return (
 		<Router>
 			<Navigation />
+
+			<Switch>
+				<Route path="/favorite">
+					<p>
+						Nothing here yet. but i's <b>favorite</b>, alright
+					</p>
+				</Route>
+				<Route path="/">
+					<p>
+						Nothing here yet. but i's <b>homepage</b>, alright
+					</p>
+				</Route>
+			</Switch>
 		</Router>
 	);
 }
