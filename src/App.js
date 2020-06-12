@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import Navigation from "./componets/Navigation";
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -9,6 +8,8 @@ import {
 	useRouteMatch,
 	useParams,
 } from "react-router-dom";
+import Navigation from "./componets/Navigation";
+import Homepage from "./componets/Homepage";
 
 function App() {
 	return (
@@ -17,14 +18,10 @@ function App() {
 
 			<Switch>
 				<Route path="/favorite">
-					<p>
-						Nothing here yet. but i's <b>favorite</b>, alright
-					</p>
+					Nothing here yet. but i's <b>favorite</b>, alright
 				</Route>
 				<Route path="/">
-					<p>
-						Nothing here yet. but i's <b>homepage</b>, alright
-					</p>
+					<Homepage />
 				</Route>
 			</Switch>
 		</Router>
