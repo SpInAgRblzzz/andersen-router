@@ -1,9 +1,21 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import Navigation from "./componets/Navigation";
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Link,
+	useRouteMatch,
+	useParams,
+} from "react-router-dom";
 
 function App() {
-	return <div className="App"></div>;
+	return (
+		<Router>
+			<Navigation />
+		</Router>
+	);
 }
 
 export default App;
