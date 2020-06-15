@@ -16,9 +16,9 @@ function Homepage() {
 
 	return (
 		<div className="homepage">
-			<fieldset>
+			<form>
 				<input type="submit" value="SUBMIT" />
-			</fieldset>
+			</form>
 			<ul className="list" ref={listNode}>
 				{list.length === 0 ? (
 					<p>no match</p>
