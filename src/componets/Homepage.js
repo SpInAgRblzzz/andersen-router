@@ -27,7 +27,7 @@ function Homepage({ list, setList }) {
 					list.map((listItem) => (
 						<HomepageListItem
 							key={listItem.id}
-							id={listItem.id}
+							externals={listItem.externals}
 							showName={listItem.name}
 						/>
 					))

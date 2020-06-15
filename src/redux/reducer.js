@@ -7,12 +7,19 @@ function reducer(state = { list: [], favorites: [] }, action) {
 			return Object.assign({}, state, { list: action.newList });
 
 		case ADD_TO_FAVORITES:
-			state.favorites.push(action.id);
+			console.log(action.externals);
+			state.favorites.push(action.externals);
 			return Object.assign({}, state);
 
 		case REMOVE_FROM_FAVORITES:
+			const { tvrage, thetvdb, imdb } = action.externals;
 			return Object.assign({}, state, {
-				favorites: state.favorites.filter((item) => item !== action.id),
+				favorites: state.favorites.filter(
+					(item) =>
+						item.tvrage !== tvrage &&
+						item.thetvdb !== thetvdb &&
+						item.imdb !== imdb
+				),
 			});
 
 		default:

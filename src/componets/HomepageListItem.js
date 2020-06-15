@@ -4,7 +4,7 @@ import addToFavorites from "../redux/addToFavorites";
 import removeFromFavorites from "../redux/removeFromfavorites";
 
 function HomepageListItem({
-	id,
+	externals,
 	showName,
 	isAdded,
 	addToFavorites,
@@ -12,9 +12,9 @@ function HomepageListItem({
 }) {
 	function handleFavoriteButton() {
 		if (isAdded) {
-			removeFromFavorites(id);
+			removeFromFavorites(externals);
 		} else {
-			addToFavorites(id);
+			addToFavorites(externals);
 		}
 	}
 
@@ -29,8 +29,13 @@ function HomepageListItem({
 }
 
 export default connect(
-	(state, { id }) => ({
-		isAdded: state.favorites.some((favId) => favId === id),
+	(state, { externals }) => ({
+		isAdded: state.favorites.some(
+			(external) =>
+				external.tvrage === externals.tvrage &&
+				external.thetvdb === externals.thetvdb &&
+				external.imdb === externals.imdb
+		),
 	}),
 	{ addToFavorites, removeFromFavorites }
 )(HomepageListItem);
