@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import setList from "../redux/setList";
 import "./Homepage.css";
+import HomepageForm from "./HomepageForm";
 
 const axios = require("axios").default;
 
@@ -18,9 +19,8 @@ function Homepage({ list, setList }) {
 
 	return (
 		<div className="homepage">
-			<form>
-				<input type="submit" value="SUBMIT" />
-			</form>
+			<HomepageForm />
+
 			<ul className="list" ref={listNode}>
 				{list.length === 0 ? (
 					<p>no match</p>
