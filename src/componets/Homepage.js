@@ -10,6 +10,7 @@ function Homepage() {
 	useEffect(() => {
 		axios.get("http://api.tvmaze.com/schedule/full").then((responce) => {
 			setList(responce.data);
+			console.log(responce.data);
 		});
 	}, []);
 
@@ -22,11 +23,9 @@ function Homepage() {
 				{list.length === 0 ? (
 					<p>no match</p>
 				) : (
-					list
-						.slice(0, 10)
-						.map((listItem) => (
-							<li key={listItem.id}>{listItem.name}</li>
-						))
+					list.map((listItem) => (
+						<li key={listItem.id}>{listItem.name}</li>
+					))
 				)}
 			</ul>
 		</div>
