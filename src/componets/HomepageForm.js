@@ -16,7 +16,6 @@ function HomepageForm({ setList }) {
 		if (nameSearch.trim()) {
 			axios(`http://api.tvmaze.com/search/shows?q=${nameSearch}`).then(
 				(responce) => {
-					console.log(responce);
 					setList(responce.data.map(({ show }) => show));
 				}
 			);

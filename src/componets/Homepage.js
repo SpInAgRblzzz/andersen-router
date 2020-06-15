@@ -3,16 +3,15 @@ import { connect } from "react-redux";
 import setList from "../redux/setList";
 import "./Homepage.css";
 import HomepageForm from "./HomepageForm";
+import HomepageListItem from "./HomepageListItem";
 
 const axios = require("axios").default;
 
 function Homepage({ list, setList }) {
-	//const [list, setList] = useState([]);
 	const listNode = React.createRef();
 
 	useEffect(() => {
 		axios.get("http://api.tvmaze.com/schedule/full").then((responce) => {
-			console.log(responce.data.length);
 			setList(responce.data);
 		});
 	}, []);
@@ -26,7 +25,11 @@ function Homepage({ list, setList }) {
 					<p>no match</p>
 				) : (
 					list.map((listItem) => (
-						<li key={listItem.id}>{listItem.name}</li>
+						<HomepageListItem
+							key={listItem.id}
+							id={listItem.id}
+							showName={listItem.name}
+						/>
 					))
 				)}
 			</ul>
