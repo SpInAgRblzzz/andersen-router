@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import Navigation from "./componets/Navigation";
 import Homepage from "./componets/Homepage";
+import FaviritesPage from "./componets/FavoritesPage";
 
 function App() {
 	return (
@@ -18,7 +19,7 @@ function App() {
 
 			<Switch>
 				<Route path="/favorite">
-					Nothing here yet. but i's <b>favorite</b>, alright
+					<FaviritesPage />
 				</Route>
 				<Route path="/">
 					<Homepage />

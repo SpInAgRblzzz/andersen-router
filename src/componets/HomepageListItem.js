@@ -20,7 +20,7 @@ function HomepageListItem({
 
 	return (
 		<li>
-			{showName}{" "}
+			{showName}
 			<button onClick={handleFavoriteButton}>
 				{isAdded ? "remove from favorite" : "add to favorite"}
 			</button>
