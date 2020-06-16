@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import setList from "../redux/setList";
 import "./Homepage.css";
 import HomepageForm from "./HomepageForm";
-import HomepageListItem from "./HomepageListItem";
+import HomepageListItem from "./ListItem";
 
 const axios = require("axios").default;
 

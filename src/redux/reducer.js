@@ -7,7 +7,7 @@ function reducer(state = { list: [], favorites: [] }, action) {
 			return Object.assign({}, state, { list: action.newList });
 
 		case ADD_TO_FAVORITES:
-			console.log(action.externals);
+			console.log("externals sent to action", action.externals);
 			state.favorites.push(action.externals);
 			return Object.assign({}, state);
 

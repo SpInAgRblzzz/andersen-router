@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import addToFavorites from "../redux/addToFavorites";
 import removeFromFavorites from "../redux/removeFromfavorites";
 
-function HomepageListItem({
+function ListItem({
 	externals,
 	showName,
 	isAdded,
@@ -30,12 +30,13 @@ function HomepageListItem({
 
 export default connect(
 	(state, { externals }) => ({
-		isAdded: state.favorites.some(
-			(external) =>
+		isAdded: state.favorites.some((external) => {
+			return (
 				external.tvrage === externals.tvrage &&
 				external.thetvdb === externals.thetvdb &&
 				external.imdb === externals.imdb
-		),
+			);
+		}),
 	}),
 	{ addToFavorites, removeFromFavorites }
-)(HomepageListItem);
+)(ListItem);

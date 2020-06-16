@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import addToFavorites from "../redux/addToFavorites";
 import removeFromfavorites from "../redux/removeFromfavorites";
-import FavoriteItem from "./FavoriteItem";
+import FavoriteItem from "./ListItem";
 
 const axios = require("axios").default;
 
@@ -25,7 +25,6 @@ function FavoritesPage({ favorites, addToFavorites, removeFromfavorites }) {
 				)
 			)
 		).then((responses) => {
-			console.log(responses);
 			setList(responses.map((response) => response.data));
 		});
 	}, []);
@@ -35,7 +34,11 @@ function FavoritesPage({ favorites, addToFavorites, removeFromfavorites }) {
 	) : list ? (
 		<ul>
 			{list.map((favItem) => (
-				<FavoriteItem name={favItem.name} />
+				<FavoriteItem
+					key={favItem.id}
+					externals={favItem.externals}
+					showName={favItem.name}
+				/>
 			))}
 		</ul>
 	) : (
