@@ -11,9 +11,13 @@ function Homepage({ list, setList }) {
 	const listNode = React.createRef();
 
 	useEffect(() => {
-		axios.get("http://api.tvmaze.com/schedule/full").then((responce) => {
-			setList(responce.data);
-		});
+		if (list.length === 0) {
+			axios
+				.get(`http://api.tvmaze.com/search/shows?q=a`)
+				.then((responce) => {
+					setList(responce.data.map((item) => item.show));
+				});
+		}
 	}, []);
 
 	return (
