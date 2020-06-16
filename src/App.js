@@ -10,7 +10,8 @@ import {
 } from "react-router-dom";
 import Navigation from "./componets/Navigation";
 import Homepage from "./componets/Homepage";
-import FaviritesPage from "./componets/FavoritesPage";
+import FavoritesPage from "./componets/FavoritesPage";
+import ShowPage from "./componets/ShowPage";
 
 function App() {
 	return (
@@ -19,7 +20,10 @@ function App() {
 
 			<Switch>
 				<Route path="/favorite">
-					<FaviritesPage />
+					<FavoritesPage />
+				</Route>
+				<Route path="/:id">
+					<ShowPage />
 				</Route>
 				<Route path="/">
 					<Homepage />

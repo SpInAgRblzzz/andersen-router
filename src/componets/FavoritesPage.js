@@ -36,6 +36,7 @@ function FavoritesPage({ favorites, addToFavorites, removeFromfavorites }) {
 			{list.map((favItem) => (
 				<FavoriteItem
 					key={favItem.id}
+					id={favItem.id}
 					externals={favItem.externals}
 					showName={favItem.name}
 				/>

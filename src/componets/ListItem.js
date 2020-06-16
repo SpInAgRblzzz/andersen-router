@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import addToFavorites from "../redux/addToFavorites";
 import removeFromFavorites from "../redux/removeFromfavorites";
+import { Link } from "react-router-dom";
 
 function ListItem({
 	externals,
@@ -9,6 +10,7 @@ function ListItem({
 	isAdded,
 	addToFavorites,
 	removeFromFavorites,
+	id,
 }) {
 	function handleFavoriteButton() {
 		if (isAdded) {
@@ -20,7 +22,7 @@ function ListItem({
 
 	return (
 		<li>
-			{showName}
+			<Link to={`/${id}`}>{showName}</Link>
 			<button onClick={handleFavoriteButton}>
 				{isAdded ? "remove from favorite" : "add to favorite"}
 			</button>
