@@ -13,7 +13,10 @@ function ShowPage() {
 	}, []);
 	return content ? (
 		<div>
-			<img src={content.image.medium} />
+			<img
+				src={content.image.medium}
+				alt={`${content.name} show image`}
+			/>
 		</div>
 	) : (
 		<h1>W8</h1>

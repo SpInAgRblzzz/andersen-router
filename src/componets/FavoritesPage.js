@@ -13,16 +13,8 @@ function FavoritesPage({ favorites, addToFavorites, removeFromfavorites }) {
 		//itog
 		//`http://api.tvmaze.com/lookup/shows?${tvrage?`tvrage=${tvrage}`: thetvdb?`thetvdb=${thetvdb}`:`imdb=${imdb}`}`
 		Promise.all(
-			favorites.map(({ tvrage, thetvdb, imdb }) =>
-				axios.get(
-					`http://api.tvmaze.com/lookup/shows?${
-						tvrage
-							? `tvrage=${tvrage}`
-							: thetvdb
-							? `thetvdb=${thetvdb}`
-							: `imdb=${imdb}`
-					}`
-				)
+			favorites.map((id) =>
+				axios.get(`http://api.tvmaze.com/shows/${id}`)
 			)
 		).then((responses) => {
 			setList(responses.map((response) => response.data));
