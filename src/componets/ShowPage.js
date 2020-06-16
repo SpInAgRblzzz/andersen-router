@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import FavoriteButton from "./FavoriteButton";
 const axios = require("axios").default;
 
 function ShowPage() {
@@ -17,6 +18,7 @@ function ShowPage() {
 				src={content.image.medium}
 				alt={`${content.name} show image`}
 			/>
+			<FavoriteButton id={id} />
 		</div>
 	) : (
 		<h1>W8</h1>
