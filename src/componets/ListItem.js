@@ -5,13 +5,7 @@ import removeFromFavorites from "../redux/removeFromfavorites";
 import { Link } from "react-router-dom";
 import FavoriteButton from "./FavoriteButton";
 
-function ListItem({
-	showName,
-	isAdded,
-	addToFavorites,
-	removeFromFavorites,
-	id,
-}) {
+function ListItem({ showName, id }) {
 	return (
 		<li>
 			<Link to={`/${id}`}>{showName}</Link>

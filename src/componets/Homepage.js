@@ -32,7 +32,6 @@ function Homepage({ list, setList }) {
 						<HomepageListItem
 							key={listItem.id}
 							id={listItem.id}
-							externals={listItem.externals}
 							showName={listItem.name}
 						/>
 					))

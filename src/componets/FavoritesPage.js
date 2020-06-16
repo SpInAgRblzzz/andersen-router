@@ -1,17 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import addToFavorites from "../redux/addToFavorites";
-import removeFromfavorites from "../redux/removeFromfavorites";
 import FavoriteItem from "./ListItem";
 
 const axios = require("axios").default;
 
-function FavoritesPage({ favorites, addToFavorites, removeFromfavorites }) {
+function FavoritesPage({ favorites }) {
 	const [list, setList] = useState(null);
 	useEffect(() => {
-		//Promise.all(favorites.map(({tvrage, thetvdb, imdb})=>axios.get())
-		//itog
-		//`http://api.tvmaze.com/lookup/shows?${tvrage?`tvrage=${tvrage}`: thetvdb?`thetvdb=${thetvdb}`:`imdb=${imdb}`}`
 		Promise.all(
 			favorites.map((id) =>
 				axios.get(`http://api.tvmaze.com/shows/${id}`)
@@ -39,7 +34,6 @@ function FavoritesPage({ favorites, addToFavorites, removeFromfavorites }) {
 	);
 }
 
-export default connect((state) => ({ favorites: state.favorites }), {
-	addToFavorites,
-	removeFromfavorites,
-})(FavoritesPage);
+export default connect((state) => ({ favorites: state.favorites }))(
+	FavoritesPage
+);
