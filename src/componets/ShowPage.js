@@ -14,10 +14,7 @@ function ShowPage() {
 	}, []);
 	return content ? (
 		<div>
-			<img
-				src={content.image.medium}
-				alt={`${content.name} show image`}
-			/>
+			<img src={content.image.medium} alt={`${content.name} show`} />
 			<FavoriteButton id={id} />
 		</div>
 	) : (

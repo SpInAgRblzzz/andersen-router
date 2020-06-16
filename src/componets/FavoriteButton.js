@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import removeFromFavorites from "../redux/removeFromfavorites";
 import addToFavorites from "../redux/addToFavorites";
@@ -9,12 +9,9 @@ function FavoriteButton({
 	addToFavorites,
 	removeFromFavorites,
 }) {
-	console.log(favorites, id);
 	const [isAdded, toggleIsAdded] = useState(
 		favorites.some((item) => item === +id)
 	);
-
-	console.log(isAdded);
 
 	function handleFavoriteButton() {
 		if (isAdded) {

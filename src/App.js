@@ -1,13 +1,6 @@
 import React from "react";
 import "./App.css";
-import {
-	BrowserRouter as Router,
-	Switch,
-	Route,
-	Link,
-	useRouteMatch,
-	useParams,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navigation from "./componets/Navigation";
 import Homepage from "./componets/Homepage";
 import FavoritesPage from "./componets/FavoritesPage";
