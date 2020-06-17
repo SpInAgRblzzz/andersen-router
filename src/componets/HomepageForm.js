@@ -20,6 +20,8 @@ function HomepageForm({ setList }) {
 					setList(responce.data.map(({ show }) => show));
 				}
 			);
+		} else {
+			setList([]);
 		}
 	}
 
