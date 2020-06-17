@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import removeFromFavorites from "../redux/removeFromfavorites";
 import addToFavorites from "../redux/addToFavorites";
-import { Button, Segment } from "semantic-ui-react";
+import { Button } from "semantic-ui-react";
 
 function FavoriteButton({
 	id,
