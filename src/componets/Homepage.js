@@ -19,7 +19,7 @@ function Homepage({ list, setList }) {
 					setList(responce.data.map((item) => item.show));
 				});
 		}
-	}, []);
+	}, [list]);
 
 	return (
 		<div className="homepage">

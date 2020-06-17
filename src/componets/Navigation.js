@@ -2,12 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "semantic-ui-react";
 import { useLocation } from "react-router-dom";
+import "./Navigation.css";
 
 function Navigation() {
 	const { pathname } = useLocation();
 
 	return (
-		<nav>
+		<nav className="page-navigation">
 			<Link to="/">
 				<Button
 					inverted

@@ -1,0 +1,17 @@
+.show-page-content {
+	padding-left: 50px;
+	padding-right: 60px;
+	padding-bottom: 50px;
+
+	display: flex;
+}
+
+img {
+	margin-bottom: 15px;
+}
+
+.left-column {
+	margin-left: 15px;
+	display: flex;
+	flex-direction: column;
+}
