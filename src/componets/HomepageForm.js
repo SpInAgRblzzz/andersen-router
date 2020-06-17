@@ -34,7 +34,6 @@ function HomepageForm({ setList }) {
 			<Button inverted color="green" onClick={handleSubmit}>
 				Search
 			</Button>
-			{/*<input type="submit" value="SUBMIT" /> */}
 		</form>
 	);
 }
