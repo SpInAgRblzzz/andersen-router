@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import FavoriteItem from "./ListItem";
 import { List } from "semantic-ui-react";
+import "./FavoritesPage.css";
 
 const axios = require("axios").default;
 
@@ -17,21 +18,25 @@ function FavoritesPage({ favorites }) {
 		});
 	}, []);
 
-	return favorites.length === 0 ? (
-		<p>no favorites added</p>
-	) : list ? (
-		<List divided verticalAlign="middle">
-			{list.map((favItem) => (
-				<FavoriteItem
-					key={favItem.id}
-					id={favItem.id}
-					externals={favItem.externals}
-					showName={favItem.name}
-				/>
-			))}
-		</List>
-	) : (
-		<h1>W8</h1>
+	return (
+		<div className="favorites-page-content">
+			{favorites.length === 0 ? (
+				<p>no favorites added</p>
+			) : list ? (
+				<List divided verticalAlign="middle">
+					{list.map((favItem) => (
+						<FavoriteItem
+							key={favItem.id}
+							id={favItem.id}
+							externals={favItem.externals}
+							showName={favItem.name}
+						/>
+					))}
+				</List>
+			) : (
+				<h1>W8</h1>
+			)}
+		</div>
 	);
 }
 

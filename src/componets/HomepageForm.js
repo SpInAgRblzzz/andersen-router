@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import setList from "../redux/setList";
 import { Icon, Input, Button } from "semantic-ui-react";
+import "./HomepageForm.css";
 
 const axios = require("axios").default;
 
