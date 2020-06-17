@@ -9,7 +9,6 @@ function ShowPage() {
 
 	useEffect(() => {
 		axios.get(`http://api.tvmaze.com/shows/${id}`).then((response) => {
-			console.log("response", response.data);
 			setContent(response.data);
 		});
 	}, []);
