@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import removeFromFavorites from "../redux/removeFromfavorites";
 import addToFavorites from "../redux/addToFavorites";
+import { Button, Segment } from "semantic-ui-react";
 
 function FavoriteButton({
 	id,
@@ -23,9 +24,9 @@ function FavoriteButton({
 	}
 
 	return (
-		<button onClick={handleFavoriteButton}>
+		<Button inverted color="red" onClick={handleFavoriteButton}>
 			{isAdded ? "remove from favorite" : "add to favorite"}
-		</button>
+		</Button>
 	);
 }
 
