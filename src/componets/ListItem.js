@@ -4,13 +4,18 @@ import addToFavorites from "../redux/addToFavorites";
 import removeFromFavorites from "../redux/removeFromfavorites";
 import { Link } from "react-router-dom";
 import FavoriteButton from "./FavoriteButton";
+import { List } from "semantic-ui-react";
 
 function ListItem({ showName, id }) {
 	return (
-		<li>
-			<Link to={`/${id}`}>{showName}</Link>
-			<FavoriteButton id={id} />
-		</li>
+		<List.Item>
+			<List.Content>
+				<Link to={`/${id}`}>{showName}</Link>
+			</List.Content>
+			<List.Content floated="right">
+				<FavoriteButton id={id} />
+			</List.Content>
+		</List.Item>
 	);
 }
 

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import setList from "../redux/setList";
+import { Icon, Input, Button } from "semantic-ui-react";
 
 const axios = require("axios").default;
 
@@ -24,16 +25,16 @@ function HomepageForm({ setList }) {
 
 	return (
 		<form onSubmit={handleSubmit}>
-			<label>
-				Search by name:
-				<input
-					type="text"
-					name="name"
-					value={nameSearch}
-					onChange={handleTextInput}
-				/>
-			</label>
-			<input type="submit" value="SUBMIT" />
+			<Input
+				icon={<Icon name="search" inverted circular link />}
+				placeholder="Search..."
+				onChange={handleTextInput}
+				value={nameSearch}
+			/>
+			<Button inverted color="green" onClick={handleSubmit}>
+				Search
+			</Button>
+			{/*<input type="submit" value="SUBMIT" /> */}
 		</form>
 	);
 }

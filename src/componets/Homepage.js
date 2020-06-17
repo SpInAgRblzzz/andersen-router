@@ -4,6 +4,7 @@ import setList from "../redux/setList";
 import "./Homepage.css";
 import HomepageForm from "./HomepageForm";
 import HomepageListItem from "./ListItem";
+import { List } from "semantic-ui-react";
 
 const axios = require("axios").default;
 
@@ -24,7 +25,11 @@ function Homepage({ list, setList }) {
 		<div className="homepage">
 			<HomepageForm />
 
-			<ul className="list" ref={listNode}>
+			<List
+				divided
+				verticalAlign="middle"
+				className="list"
+				ref={listNode}>
 				{list.length === 0 ? (
 					<p>no match</p>
 				) : (
@@ -36,7 +41,7 @@ function Homepage({ list, setList }) {
 						/>
 					))
 				)}
-			</ul>
+			</List>
 		</div>
 	);
 }
